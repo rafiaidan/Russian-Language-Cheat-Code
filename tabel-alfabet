@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Alphabet Cheatsheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            padding: 40px 20px;
+            color: #1a1a2e;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #CC0000;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #003399;
+            margin-bottom: 10px;
+        }
+
+        .header h1 span {
+            color: #CC0000;
+        }
+
+        .header p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #003399;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        /* Tombol Print */
+        .print-btn {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .print-btn button {
+            background: #003399;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .print-btn button:hover {
+            background: #CC0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(204,0,0,0.3);
+        }
+
+        /* Tabel */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid #e0e0e0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #003399;
+            color: white;
+            padding: 14px 10px;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 3px solid #CC0000;
+        }
+
+        td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #ffe5e5;
+            transition: 0.2s;
+        }
+
+        /* Huruf Sirilik di tabel */
+        .cyrillic {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #003399;
+        }
+
+        .example {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #CC0000;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 35px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Tips section */
+        .tips {
+            background: #f0f3f8;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+            border-left: 5px solid #CC0000;
+        }
+
+        .tips h3 {
+            color: #003399;
+            margin-bottom: 12px;
+        }
+
+        .tips ul {
+            margin-left: 20px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            th, td {
+                font-size: 0.8rem;
+                padding: 8px 4px;
+            }
+            .cyrillic {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .print-btn button {
+                display: none;
+            }
+            .container {
+                box-shadow: none;
+                padding: 10px;
+            }
+            tr:hover {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="print-btn">
+            <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+        </div>
+
+        <div class="header">
+            <h1>🇷🇺 Russian <span>Alphabet</span> Cheatsheet</h1>
+            <p>Complete Cyrillic alphabet with pronunciation guide for beginners</p>
+            <div class="badge">33 letters • Easy reference</div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Capital</th>
+                        <th>Small</th>
+                        <th>Letter Name</th>
+                        <th>Pronunciation (like...)</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="cyrillic">А</td><td class="cyrillic">а</td><td>Ah</td><td>A (father)</td><td class="example">мама (mama)</td></tr>
+                    <tr><td class="cyrillic">Б</td><td class="cyrillic">б</td><td>Beh</td><td>B (boy)</td><td class="example">брат (brat)</td></tr>
+                    <tr><td class="cyrillic">В</td><td class="cyrillic">в</td><td>Veh</td><td>V (very)</td><td class="example">вода (voda)</td></tr>
+                    <tr><td class="cyrillic">Г</td><td class="cyrillic">г</td><td>Geh</td><td>G (go)</td><td class="example">город (gorod)</td></tr>
+                    <tr><td class="cyrillic">Д</td><td class="cyrillic">д</td><td>Deh</td><td>D (dog)</td><td class="example">дом (dom)</td></tr>
+                    <tr><td class="cyrillic">Е</td><td class="cyrillic">е</td><td>Yeh</td><td>YE (yes)</td><td class="example">еда (yeda)</td></tr>
+                    <tr><td class="cyrillic">Ё</td><td class="cyrillic">ё</td><td>Yo</td><td>YO (yogurt)</td><td class="example">ёж (yozh)</td></tr>
+                    <tr><td class="cyrillic">Ж</td><td class="cyrillic">ж</td><td>Zhe</td><td>ZH (pleasure)</td><td class="example">жизнь (zhizn)</td></tr>
+                    <tr><td class="cyrillic">З</td><td class="cyrillic">з</td><td>Zeh</td><td>Z (zebra)</td><td class="example">зуб (zub)</td></tr>
+                    <tr><td class="cyrillic">И</td><td class="cyrillic">и</td><td>Ee</td><td>EE (see)</td><td class="example">или (ili)</td></tr>
+                    <tr><td class="cyrillic">Й</td><td class="cyrillic">й</td><td>Ee kratkoye</td><td>short Y (boy)</td><td class="example">чай (chay)</td></tr>
+                    <tr><td class="cyrillic">К</td><td class="cyrillic">к</td><td>Kah</td><td>K (kite)</td><td class="example">книга (kniga)</td></tr>
+                    <tr><td class="cyrillic">Л</td><td class="cyrillic">л</td><td>El</td><td>L (lamp)</td><td class="example">лампа (lampa)</td></tr>
+                    <tr><td class="cyrillic">М</td><td class="cyrillic">м</td><td>Em</td><td>M (mother)</td><td class="example">мама (mama)</td></tr>
+                    <tr><td class="cyrillic">Н</td><td class="cyrillic">н</td><td>En</td><td>N (no)</td><td class="example">ночь (noch)</td></tr>
+                    <tr><td class="cyrillic">О</td><td class="cyrillic">о</td><td>Oh</td><td>O (orange)</td><td class="example">окно (okno)</td></tr>
+                    <tr><td class="cyrillic">П</td><td class="cyrillic">п</td><td>Peh</td><td>P (pen)</td><td class="example">папа (papa)</td></tr>
+                    <tr><td class="cyrillic">Р</td><td class="cyrillic">р</td><td>Er</td><td>rolled R (red)</td><td class="example">река (reka)</td></tr>
+                    <tr><td class="cyrillic">С</td><td class="cyrillic">с</td><td>Es</td><td>S (sun)</td><td class="example">сок (sok)</td></tr>
+                    <tr><td class="cyrillic">Т</td><td class="cyrillic">т</td><td>Teh</td><td>T (top)</td><td class="example">тут (tut)</td></tr>
+                    <tr><td class="cyrillic">У</td><td class="cyrillic">у</td><td>Oo</td><td>U (boot)</td><td class="example">утро (utro)</td></tr>
+                    <tr><td class="cyrillic">Ф</td><td class="cyrillic">ф</td><td>Ef</td><td>F (fun)</td><td class="example">фото (foto)</td></tr>
+                    <tr><td class="cyrillic">Х</td><td class="cyrillic">х</td><td>Kh</td><td>KH (loch)</td><td class="example">хлеб (khleb)</td></tr>
+                    <tr><td class="cyrillic">Ц</td><td class="cyrillic">ц</td><td>Tse</td><td>TS (tsar)</td><td class="example">конец (konets)</td></tr>
+                    <tr><td class="cyrillic">Ч</td><td class="cyrillic">ч</td><td>Che</td><td>CH (cheese)</td><td class="example">час (chas)</td></tr>
+                    <tr><td class="cyrillic">Ш</td><td class="cyrillic">ш</td><td>Sha</td><td>SH (shop)</td><td class="example">шар (shar)</td></tr>
+                    <tr><td class="cyrillic">Щ</td><td class="cyrillic">щ</td><td>Shcha</td><td>SHCH (fresh cheese)</td><td class="example">щука (shchuka)</td></tr>
+                    <tr><td class="cyrillic">Ъ</td><td class="cyrillic">ъ</td><td>Hard sign</td><td>(no sound)</td><td class="example">объект (obyekt)</td></tr>
+                    <tr><td class="cyrillic">Ы</td><td class="cyrillic">ы</td><td>Yery</td><td>deep I (ill)</td><td class="example">мы (my)</td></tr>
+                    <tr><td class="cyrillic">Ь</td><td class="cyrillic">ь</td><td>Soft sign</td><td>(softens previous)</td><td class="example">день (den)</td></tr>
+                    <tr><td class="cyrillic">Э</td><td class="cyrillic">э</td><td>Eh</td><td>E (met)</td><td class="example">это (eto)</td></tr>
+                    <tr><td class="cyrillic">Ю</td><td class="cyrillic">ю</td><td>Yu</td><td>YU (you)</td><td class="example">юг (yug)</td></tr>
+                    <tr><td class="cyrillic">Я</td><td class="cyrillic">я</td><td>Ya</td><td>YA (yard)</td><td class="example">яблоко (yabloko)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tips">
+            <h3>💡 Quick Tips for Beginners</h3>
+            <ul>
+                <li><strong>⚠️ False friends:</strong> В = V (not B), Н = N (not H), Р = R (not P), С = S (not C), У = U (not Y), Х = KH (not X)</li>
+                <li><strong>🔇 Silent letters:</strong> Ъ (hard sign) and Ь (soft sign) have no sound — they change how the previous letter is pronounced.</li>
+                <li><strong>🎯 Hardest letters for Indonesian speakers:</strong> Ы (throat sound), Ж (ZH like 's' in 'measure'), Щ (longer SH sound).</li>
+                <li><strong>📖 Practice tip:</strong> Read street signs or menus in Cyrillic — Москва = Moskva (Moscow).</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📚 Russian Cheatsheet for Beginners • Free to print and share • Learn one letter at a time 🇷🇺</p>
+        </div>
+    </div>
+    <p class="print-btn button"><a href = "../Home/home.html" >Go back</a></p>
+</body>
+</html>
