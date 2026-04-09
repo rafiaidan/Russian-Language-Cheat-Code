@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Cases Cheatsheet - Declension Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%);
+            padding: 40px 20px;
+            color: #1a1a2e;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #CC0000;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #003399;
+            margin-bottom: 10px;
+        }
+
+        .header h1 span {
+            color: #CC0000;
+        }
+
+        .header p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #003399;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        .print-btn {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .print-btn button {
+            background: #003399;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn button:hover {
+            background: #CC0000;
+            transform: translateY(-2px);
+        }
+
+        /* Main table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 40px;
+            border-radius: 16px;
+            border: 1px solid #e0e0e0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #003399;
+            color: white;
+            padding: 14px 10px;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 3px solid #CC0000;
+        }
+
+        td {
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #ffe5e5;
+        }
+
+        .case-russian {
+            font-weight: 700;
+            color: #CC0000;
+            background-color: #fff0f0;
+        }
+
+        .russian-word {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003399;
+            font-family: 'Courier New', monospace;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #003399;
+            margin: 30px 0 20px 0;
+            padding-left: 15px;
+            border-left: 5px solid #CC0000;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .note {
+            background: #f0f3f8;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+            border-left: 5px solid #CC0000;
+        }
+
+        .note h3 {
+            color: #003399;
+            margin-bottom: 12px;
+        }
+
+        .note ul {
+            margin-left: 20px;
+            line-height: 1.7;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .back-button a {
+            display: inline-block;
+            background: #CC0000;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button a:hover {
+            background: #003399;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            th, td {
+                font-size: 0.75rem;
+                padding: 8px 4px;
+            }
+            .russian-word {
+                font-size: 0.9rem;
+            }
+            .back-button a {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .print-btn button, .back-button {
+                display: none;
+            }
+            .container {
+                box-shadow: none;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="print-btn">
+            <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+        </div>
+
+        <div class="header">
+            <h1>🇷🇺 Russian <span>Noun Declension</span> Table</h1>
+            <p>Complete guide to 6 cases (падежи) with examples</p>
+            <div class="badge">6 cases • 5 noun types • Full conjugation</div>
+        </div>
+
+        <!-- MASTER PATTERN TABLE -->
+        <h2 class="section-title">📌 Master Pattern: Endings by Gender & Case</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case (Падеж)</th>
+                        <th>Function</th>
+                        <th>Masculine (hard)</th>
+                        <th>Masculine (soft)</th>
+                        <th>Neuter</th>
+                        <th>Feminine (hard)</th>
+                        <th>Feminine (-ь)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="case-russian"><td><strong>Nominative</strong><br>Именительный</td><td>Subject</td><td>-</td><td>-</td><td>-о / -е</td><td>-а</td><td>-я / -ь</td></tr>
+                    <tr><td><strong>Genitive</strong><br>Родительный</td><td>Possession (of)</td><td>-а</td><td>-я</td><td>-а</td><td>-ы</td><td>-и</td></tr>
+                    <tr><td><strong>Dative</strong><br>Дательный</td><td>Indirect object (to)</td><td>-у</td><td>-ю</td><td>-у</td><td>-е</td><td>-и</td></tr>
+                    <tr><td><strong>Accusative</strong><br>Винительный</td><td>Direct object</td><td>animate=-а<br>inanimate=-</td><td>animate=-я<br>inanimate=-</td><td>same as Nom.</td><td>-у</td><td>-ю / -ь</td></tr>
+                    <tr><td><strong>Instrumental</strong><br>Творительный</td><td>By/with</td><td>-ом</td><td>-ем</td><td>-ом</td><td>-ой (-ою)</td><td>-ей (-ею) / -ью</td></tr>
+                    <tr><td><strong>Prepositional</strong><br>Предложный</td><td>About/on/in</td><td>-е</td><td>-е</td><td>-е</td><td>-е</td><td>-и</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- EXAMPLE 1: STOL -->
+        <h2 class="section-title">📖 Example 1: СТОЛ (table) - Masculine Inanimate</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Case</th><th>Russian</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td>Nominative</td><td class="russian-word">стол</td><td>stol</td><td>table (subject)</td></tr>
+                    <tr><td>Genitive</td><td class="russian-word">стола</td><td>stola</td><td>of the table</td></tr>
+                    <tr><td>Dative</td><td class="russian-word">столу</td><td>stolu</td><td>to the table</td></tr>
+                    <tr><td>Accusative</td><td class="russian-word">стол</td><td>stol</td><td>table (object)</td></tr>
+                    <tr><td>Instrumental</td><td class="russian-word">столом</td><td>stolom</td><td>with/by the table</td></tr>
+                    <tr><td>Prepositional</td><td class="russian-word">столе</td><td>stole</td><td>about/on the table</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- EXAMPLE 2: MAMA -->
+        <h2 class="section-title">👩 Example 2: МАМА (mom) - Feminine Hard</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Case</th><th>Russian</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td>Nominative</td><td class="russian-word">мама</td><td>mama</td><td>mom (subject)</td></tr>
+                    <tr><td>Genitive</td><td class="russian-word">мамы</td><td>mamy</td><td>of mom</td></tr>
+                    <tr><td>Dative</td><td class="russian-word">маме</td><td>mame</td><td>to mom</td></tr>
+                    <tr><td>Accusative</td><td class="russian-word">маму</td><td>mamu</td><td>mom (object)</td></tr>
+                    <tr><td>Instrumental</td><td class="russian-word">мамой (мамою)</td><td>mamoy (mamoyu)</td><td>with/by mom</td></tr>
+                    <tr><td>Prepositional</td><td class="russian-word">маме</td><td>mame</td><td>about mom</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- EXAMPLE 3: OKNO -->
+        <h2 class="section-title">🪟 Example 3: ОКНО (window) - Neuter</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Case</th><th>Russian</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td>Nominative</td><td class="russian-word">окно</td><td>okno</td><td>window (subject)</td></tr>
+                    <tr><td>Genitive</td><td class="russian-word">окна</td><td>okna</td><td>of the window</td></tr>
+                    <tr><td>Dative</td><td class="russian-word">окну</td><td>oknu</td><td>to the window</td></tr>
+                    <tr><td>Accusative</td><td class="russian-word">окно</td><td>okno</td><td>window (object)</td></tr>
+                    <tr><td>Instrumental</td><td class="russian-word">окном</td><td>oknom</td><td>with/by the window</td></tr>
+                    <tr><td>Prepositional</td><td class="russian-word">окне</td><td>okne</td><td>about the window</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- EXAMPLE 4: DEN' -->
+        <h2 class="section-title">🌞 Example 4: ДЕНЬ (day) - Masculine Soft</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Case</th><th>Russian</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td>Nominative</td><td class="russian-word">день</td><td>den'</td><td>day (subject)</td></tr>
+                    <tr><td>Genitive</td><td class="russian-word">дня</td><td>dnya</td><td>of the day</td></tr>
+                    <tr><td>Dative</td><td class="russian-word">дню</td><td>dnyu</td><td>to the day</td></tr>
+                    <tr><td>Accusative</td><td class="russian-word">день</td><td>den'</td><td>day (object)</td></tr>
+                    <tr><td>Instrumental</td><td class="russian-word">днём</td><td>dnyom</td><td>with/by the day</td></tr>
+                    <tr><td>Prepositional</td><td class="russian-word">дне</td><td>dne</td><td>about the day</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- EXAMPLE 5: NOCH' -->
+        <h2 class="section-title">🌙 Example 5: НОЧЬ (night) - Feminine Soft (-ь)</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Case</th><th>Russian</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td>Nominative</td><td class="russian-word">ночь</td><td>noch'</td><td>night (subject)</td></tr>
+                    <tr><td>Genitive</td><td class="russian-word">ночи</td><td>nochi</td><td>of the night</td></tr>
+                    <tr><td>Dative</td><td class="russian-word">ночи</td><td>nochi</td><td>to the night</td></tr>
+                    <tr><td>Accusative</td><td class="russian-word">ночь</td><td>noch'</td><td>night (object)</td></tr>
+                    <tr><td>Instrumental</td><td class="russian-word">ночью</td><td>noch'yu</td><td>with/by the night</td></tr>
+                    <tr><td>Prepositional</td><td class="russian-word">ночи</td><td>nochi</td><td>about the night</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- NOTES -->
+        <div class="note">
+            <h3>💡 Important Notes about Russian Cases</h3>
+            <ul>
+                <li><strong>Nominative</strong> = dictionary form (the "default" form)</li>
+                <li><strong>Genitive</strong> = shows possession (like English "'s" or "of")</li>
+                <li><strong>Dative</strong> = used after "to" or "for" (indirect object)</li>
+                <li><strong>Accusative</strong> = direct object (receives the action)</li>
+                <li><strong>Instrumental</strong> = means/method ("with", "by means of")</li>
+                <li><strong>Prepositional</strong> = always used with prepositions (about, in, on)</li>
+                <li><strong>Animate vs Inanimate:</strong> For masculine accusative, living things take genitive ending, non-living take nominative ending</li>
+                <li><strong>Soft endings:</strong> Words ending in -й, -ь (masc), or -я (fem) use soft endings</li>
+            </ul>
+        </div>
+
+        <div class="note" style="border-left-color: #003399;">
+            <h3>🎯 Quick Memory Tricks</h3>
+            <ul>
+                <li><strong>Genitive masculine = add -а</strong> (стол → стола)</li>
+                <li><strong>Dative feminine = change -а to -е</strong> (мама → маме)</li>
+                <li><strong>Instrumental feminine = add -ой</strong> (мама → мамой)</li>
+                <li><strong>Prepositional always ends in -е or -и</strong></li>
+                <li><strong>Neuter & Masculine often share endings</strong> (-а in genitive, -ом in instrumental)</li>
+            </ul>
+        </div>
+
+        <div class="footer" style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #777;">
+            <p>📚 Russian Grammar Cheatsheet • 6 Cases (падежи) • Noun Declension Guide 🇷🇺</p>
+        </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="back-button">
+        <a href="../Home/home.html" id="backLink">← Back</a>
+    </div>
+
+    <script>
+        var backButton = document.getElementById('backLink');
+        // ===========================================
+        // 🔧 GANTI HYPERLINK DI SINI 🔧
+        // Contoh: backButton.href = "index.html";
+        // ===========================================
+        backButton.href = "../Home/home.html";  // Ganti dengan link tujuan kamu
+        // ===========================================
+    </script>
+</body>
+</html>
